@@ -1,8 +1,8 @@
-<div class="md-inline-form">
+<div class="md-inline-form" style="margin-top: 5px">
+    <h2>Cadastro de Novo Bebê</h2>
     <md-content layout-padding>
-        <h1>Cadastro de Novo Bebê</h1>
         <md-whiteframe class="md-whiteframe-2dp" layout>
-            <div layout="column" flex>
+            <form layout="column" flex>
                 <md-input-container>
                     <label>Nome</label>
                     <input ng-model="bbCreateCtrl.novoBB.b_nome">
@@ -18,36 +18,37 @@
                     <input ng-model="bbCreateCtrl.novoBB.b_naturalidade">
                 </md-input-container>
 
-                <md-input-container>
-                    <label>Foto do Bebê</label>
-                    <input ng-model="bbCreateCtrl.novoBB.b_foto" type="file">
+                <md-input-container layout="column">
+                    <label style="margin-bottom: 20px">Foto do Bebê</label>
                 </md-input-container>
+                <input ng-model="bbCreateCtrl.novoBB.b_foto" type="file">
 
                 <md-input-container>
                     <label>Observações</label>
                     <input type="text" ng-model="bbCreateCtrl.novoBB.b_obs">
                 </md-input-container>
 
-                <!-- <form name="autocompleteForm">
-                <md-autocomplete required md-input-name="bbCreateCtrl.responsaveis"
-                    md-selected-item="bbCreateCtrl.selectedItem" md-search-text="bbCreateCtrl.searchText"
-                    md-items="item in ctrl.querySearch(ctrl.searchText)"
-                    md-item-text="item.p_nome">
-                  <md-item-template>
-                    <span md-highlight-text="bbCreateCtrl.searchText">{{item.display}}</span>
-                  </md-item-template>
-                  <div ng-messages="autocompleteForm.autocomplete.$error">
-                    <div ng-message="required">This field is required</div>
-                  </div>
+                <md-autocomplete flex required
+                                 md-input-name="autocompleteField"
+                                 md-input-minlength="2"
+                                 md-input-maxlength="18"
+                                 md-selected-item="bbCreateCtrl.selectedResp"
+                                 md-search-text="bbCreateCtrl.searchText"
+                                 md-items="item in bbCreateCtrl.querySearch(bbCreateCtrl.searchText)"
+                                 md-item-text="item.p_nome"
+                                 md-floating-label="Responsável do Bebê">
+                    <md-item-template>
+                        <span md-highlight-text="bbCreateCtrl.searchText">{{item.p_nome}}</span>
+                    </md-item-template>
                 </md-autocomplete>
-              </form> -->
+
               <div layout="row" layout-align="end center">
                     <div>
                         <md-button class="md-raised md-primary" ng-click="bbCreateCtrl.create()">Salvar
                         </md-button>
                     </div>
                 </div>
-            </div>
+            </form>
         </md-whiteframe>
     </md-content>
 </div>
