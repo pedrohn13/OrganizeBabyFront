@@ -45,6 +45,9 @@ md-list-item {
 
 /* Primary content area */
 
+.background-content {
+  background:url(images/bg.png);
+}
 
 #content  {
   padding-left: 40px;
@@ -91,7 +94,6 @@ md-list-item {
   width: 54px;
   height: 54px;
   border: 1px solid #ddd;
-  border-radius: 50%;
   display: inline-block;
   overflow: hidden;
   margin: 0px;

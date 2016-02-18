@@ -1,0 +1,27 @@
+<div class="md-inline-form">
+    <md-content layout-padding>
+        <h1>Cadastro de Novo Cuidador(a)</h1>
+        <md-whiteframe class="md-whiteframe-2dp" layout>
+            <div layout="column" flex>
+                <md-input-container>
+                    <label>Nome</label>
+                    <input ng-model="cuidCreateCtrl.novoCuid.c_nome">
+                </md-input-container>
+                <md-input-container>
+                    <label>CPF</label>
+                    <input ng-model="cuidCreateCtrl.novoCuid.p_cpf">
+                </md-input-container>
+                <md-input-container>
+                    <label>Foto do cuidador(a)</label>
+                    <input ng-model="cuidCreateCtrl.novoCuid.c_foto" type="file">
+                </md-input-container>
+                <div layout="row" layout-align="end center">
+                    <div>
+                        <md-button class="md-raised md-primary" ng-click="cuidCreateCtrl.create()">Salvar
+                        </md-button>
+                    </div>
+                </div>
+            </div>
+        </md-whiteframe>
+    </md-content>
+</div>

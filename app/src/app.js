@@ -18,6 +18,14 @@
           templateUrl: 'src/responsavel/view/responsavel-create.html',
           controller: 'ResponsavelCreateController as respCreateCtrl'
         }).
+        when('/cuidador.list', {
+          templateUrl: 'src/cuidador/view/cuidador-list.html',
+          controller: 'CuidadorListController as cuidCtrl'
+        }).
+        when('/cuidador.cadastro', {
+          templateUrl: 'src/cuidador/view/cuidador-create.html',
+          controller: 'CuidadorCreateController as cuidCreateCtrl'
+        }).
         otherwise({
           redirectTo: '/'
         });

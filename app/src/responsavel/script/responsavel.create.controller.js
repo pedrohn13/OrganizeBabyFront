@@ -3,9 +3,9 @@
   angular
     .module('users')
     .controller('ResponsavelCreateController',
-      ['$http', '$location', ResponsavelListController]);
+      ['$http', '$location', ResponsavelCreateController]);
 
-  function ResponsavelListController($http, $location) {
+  function ResponsavelCreateController($http, $location) {
     var root = 'https://leonardoads.pythonanywhere.com/OrganizeBaby/default/api';
     var self = this;
     self.create = create;
