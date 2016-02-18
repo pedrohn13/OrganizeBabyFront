@@ -1,0 +1,53 @@
+<div class="md-inline-form">
+    <md-content layout-padding>
+        <h1>Cadastro de Novo Bebê</h1>
+        <md-whiteframe class="md-whiteframe-2dp" layout>
+            <div layout="column" flex>
+                <md-input-container>
+                    <label>Nome</label>
+                    <input ng-model="bbCreateCtrl.novoBB.b_nome">
+                </md-input-container>
+
+                <md-radio-group ng-model="bbCreateCtrl.novoBB.b_sexo">
+                  <md-radio-button value="m" class="md-primary">Masculino</md-radio-button>
+                  <md-radio-button value="f"> Feminino </md-radio-button>
+                </md-radio-group>
+
+                <md-input-container>
+                    <label>Naturalidade</label>
+                    <input ng-model="bbCreateCtrl.novoBB.b_naturalidade">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Foto do Bebê</label>
+                    <input ng-model="bbCreateCtrl.novoBB.b_foto" type="file">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Observações</label>
+                    <input type="text" ng-model="bbCreateCtrl.novoBB.b_obs">
+                </md-input-container>
+
+                <!-- <form name="autocompleteForm">
+                <md-autocomplete required md-input-name="bbCreateCtrl.responsaveis"
+                    md-selected-item="bbCreateCtrl.selectedItem" md-search-text="bbCreateCtrl.searchText"
+                    md-items="item in ctrl.querySearch(ctrl.searchText)"
+                    md-item-text="item.p_nome">
+                  <md-item-template>
+                    <span md-highlight-text="bbCreateCtrl.searchText">{{item.display}}</span>
+                  </md-item-template>
+                  <div ng-messages="autocompleteForm.autocomplete.$error">
+                    <div ng-message="required">This field is required</div>
+                  </div>
+                </md-autocomplete>
+              </form> -->
+              <div layout="row" layout-align="end center">
+                    <div>
+                        <md-button class="md-raised md-primary" ng-click="bbCreateCtrl.create()">Salvar
+                        </md-button>
+                    </div>
+                </div>
+            </div>
+        </md-whiteframe>
+    </md-content>
+</div>

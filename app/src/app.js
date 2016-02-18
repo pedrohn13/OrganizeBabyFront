@@ -26,6 +26,14 @@
           templateUrl: 'src/cuidador/view/cuidador-create.html',
           controller: 'CuidadorCreateController as cuidCreateCtrl'
         }).
+        when('/bebe.list', {
+          templateUrl: 'src/bebe/view/bebe-list.html',
+          controller: 'BebeListController as bbLCtrl'
+        }).
+        when('/bebe.cadastro', {
+          templateUrl: 'src/bebe/view/bebe-create.html',
+          controller: 'BebeCreateController as bbCreateCtrl'
+        }).
         otherwise({
           redirectTo: '/'
         });
