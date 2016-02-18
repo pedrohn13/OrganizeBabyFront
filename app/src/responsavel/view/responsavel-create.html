@@ -1,0 +1,31 @@
+<div class="md-inline-form">
+    <md-content layout-padding>
+        <h1>Cadastro de Novo Responsável</h1>
+        <md-whiteframe class="md-whiteframe-2dp" layout>
+            <div layout="column" flex>
+                <md-input-container>
+                    <label>Nome</label>
+                    <input ng-model="respCreateCtrl.novoResp.p_nome">
+                </md-input-container>
+                <md-input-container>
+                    <label>CPF</label>
+                    <input ng-model="respCreateCtrl.novoResp.p_cpf">
+                </md-input-container>
+                <md-input-container>
+                    <label>Telefone</label>
+                    <input ng-model="respCreateCtrl.novoResp.p_telefone">
+                </md-input-container>
+                <md-input-container>
+                    <label>Senha</label>
+                    <input ng-model="respCreateCtrl.novoResp.p_senha" type="password">
+                </md-input-container>
+                <div layout="row" layout-align="end center">
+                    <div>
+                        <md-button class="md-raised md-primary" ng-click="respCreateCtrl.create()">Salvar
+                        </md-button>
+                    </div>
+                </div>
+            </div>
+        </md-whiteframe>
+    </md-content>
+</div>

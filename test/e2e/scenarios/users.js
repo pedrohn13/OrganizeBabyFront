@@ -14,7 +14,7 @@ describe('my app', function() {
     users.loadAll();
   });
 
-  it('should load a list of users', function() {
+  it('should load a list of responsavel', function() {
     expect(users.count()).toBeGreaterThan(1);
   });
 

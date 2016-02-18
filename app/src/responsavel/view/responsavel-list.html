@@ -1,0 +1,15 @@
+<div>
+    <md-list>
+        <md-subheader class="md-no-sticky">Lista de Responsáveis</md-subheader>
+        <md-button class="md-raised md-primary" ng-click="respCtrl.cadastrar()">Cadastrar Novo</md-button>
+        <md-list-item ng-repeat="resp in respCtrl.responsaveis" ng-click="respCtrl.goToPerson(resp.p_id)">
+            <md-icon md-svg-icon="assets/svg/avatar-1.svg" class="avatar"></md-icon>
+
+            <p>{{ resp.p_nome }}</p>
+            <md-icon md-svg-icon="communication:messenger"  aria-label="Edit"
+                     class="md-secondary md-hue-3" "></md-icon>
+        </md-list-item>
+
+
+    </md-list>
+</div>
