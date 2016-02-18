@@ -11,7 +11,7 @@
 
     self.selected = null;
     self.users = [];
-    self.selectUser = selectUser;
+    self.selectEntidade = selectEntidade;
     self.toggleList = toggleUsersList;
 
     // Load all registered responsavel
@@ -26,8 +26,9 @@
       $mdSidenav('left').toggle();
     }
 
-    function selectUser(view) {
-      $location.path(view);
+    function selectEntidade(item) {
+      self.selected = item;
+      $location.path(item.url);
     }
 
   }

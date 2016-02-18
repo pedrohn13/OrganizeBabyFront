@@ -111,3 +111,13 @@ span.name {
   font-size:1.1em;
   padding-left:5px;
 }
+
+.imagem-contato {
+  background-color: #fff;
+  border-radius: 20%;
+  padding:4px;
+  transition: all 100ms ease-out 30ms;
+  fill:black;
+  width:36px !important;
+  height:36px !important;
+}

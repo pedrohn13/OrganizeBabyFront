@@ -3,10 +3,8 @@
         <h2>Lista de Cuidadores</h2>
         <md-button class="md-raised md-primary" ng-click="cuidCtrl.cadastrar()">Cadastrar Novo</md-button>
         <md-list-item ng-repeat="cuid in cuidCtrl.cuidadores" ng-click="cuidCtrl.goToPerson(cuid.p_id)">
-            <md-icon md-svg-icon="assets/svg/avatar-1.svg" class="avatar"></md-icon>
+            <md-icon md-svg-icon="assets/svg/avatar-1.svg" class="imagem-contato"></md-icon>
             <p>{{ cuid.c_nome }}</p>
-            <md-icon md-svg-icon="communication:messenger"  aria-label="Edit"
-                     class="md-secondary md-hue-3" "></md-icon>
         </md-list-item>
 
 

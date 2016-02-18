@@ -36,7 +36,7 @@
 
     <md-list>
         <md-list-item ng-repeat="it in homeCtrl.users">
-            <md-button ng-click="homeCtrl.selectUser(it.url)" ng-class="{'selected' : it === homeCtrl.selected }">
+            <md-button ng-click="homeCtrl.selectEntidade(it)" ng-class="{'selected' : it === homeCtrl.selected }">
                 {{it.name}}
             </md-button>
         </md-list-item>

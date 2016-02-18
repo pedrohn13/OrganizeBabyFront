@@ -17,9 +17,7 @@
       url: root + '/pais.json'
     }).then(function mySucces(response) {
       self.responsaveis = response.data.content;
-      console.log(1)
     }, function myError(response) {
-      console.log(2)
     });
 
     function goToPerson(id) {

@@ -1,31 +1,33 @@
-<div class="md-inline-form">
+<div class="md-inline-form" style="margin-top: 5px">
+    <h2>Cadastro de Novo Responsável</h2>
     <md-content layout-padding>
-        <h1>Cadastro de Novo Responsável</h1>
         <md-whiteframe class="md-whiteframe-2dp" layout>
-            <div layout="column" flex>
-                <md-input-container>
-                    <label>Nome</label>
-                    <input ng-model="respCreateCtrl.novoResp.p_nome">
-                </md-input-container>
-                <md-input-container>
-                    <label>CPF</label>
-                    <input ng-model="respCreateCtrl.novoResp.p_cpf">
-                </md-input-container>
-                <md-input-container>
-                    <label>Telefone</label>
-                    <input ng-model="respCreateCtrl.novoResp.p_telefone">
-                </md-input-container>
-                <md-input-container>
-                    <label>Senha</label>
-                    <input ng-model="respCreateCtrl.novoResp.p_senha" type="password">
-                </md-input-container>
-                <div layout="row" layout-align="end center">
-                    <div>
-                        <md-button class="md-raised md-primary" ng-click="respCreateCtrl.create()">Salvar
-                        </md-button>
+            <form flex name="searchForm">
+                <div layout="column" flex>
+                    <md-input-container>
+                        <label>Nome</label>
+                        <input ng-model="respCreateCtrl.novoResp.p_nome">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>CPF</label>
+                        <input ng-model="respCreateCtrl.novoResp.p_cpf">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Telefone</label>
+                        <input ng-model="respCreateCtrl.novoResp.p_telefone">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Senha</label>
+                        <input ng-model="respCreateCtrl.novoResp.p_senha" type="password">
+                    </md-input-container>
+                    <div layout="row" layout-align="end center">
+                        <div>
+                            <md-button class="md-raised md-primary" ng-click="respCreateCtrl.create()">Salvar
+                            </md-button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </md-whiteframe>
     </md-content>
 </div>
