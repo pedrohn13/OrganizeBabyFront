@@ -17,7 +17,6 @@
             url: root + '/cuidadora.json'
         }).then(function mySucces(response) {
             self.cuidadores = response.data.content;
-            console.log(self.cuidadores)
         }, function myError(response) {
             //incluir dialog
         });

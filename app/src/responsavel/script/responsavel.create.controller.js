@@ -19,7 +19,6 @@
       }).then(function mySucces(response) {
         $location.path('responsavel.list');
       }, function myError(response) {
-        console.log('fail')
       });
     }
 
