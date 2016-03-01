@@ -2,7 +2,7 @@
   'use strict';
 
   // Prepare the 'responsavel' module for subsequent registration of controllers and delegates
-  angular.module('users', ['ngMaterial', 'ngRoute'])
+  angular.module('users', ['ngMaterial', 'ngRoute', 'ngMdIcons'])
 
     .config(['$routeProvider',
       function ($routeProvider) {

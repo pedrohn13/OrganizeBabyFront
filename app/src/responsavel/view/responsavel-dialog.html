@@ -1,0 +1,27 @@
+<md-dialog aria-label="Mango (Fruit)" ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Responsável</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <h2>Nome</h2>
+                <p>{{user.p_nome}}</p>
+                <h2>Telefone</h2>
+                <p>{{user.p_telefone}}</p>
+                <h2>CPF</h2>
+                <p>{{user.p_cpf}}</p>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button class="md-icon-button" aria-label="Edit">
+                <ng-md-icon icon="create" size="20"></ng-md-icon>
+            </md-button>
+            <md-button class="md-icon-button" ng-click="remover($event)" aria-label="Delete">
+                <ng-md-icon icon="delete" size="20"></ng-md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
