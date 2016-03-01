@@ -3,9 +3,9 @@
   angular
     .module('users')
     .controller('BebeCreateController',
-      ['$http', '$location', BebeCreateController]);
+      ['$http', '$location', '$mdDialog', BebeCreateController]);
 
-  function BebeCreateController($http, $location) {
+  function BebeCreateController($http, $location, $mdDialog) {
     var root = 'https://leonardoads.pythonanywhere.com/OrganizeBaby/default/api';
     var self = this;
     self.create = create;
@@ -22,17 +22,31 @@
     }, function myError(response) {
     });
 
-    function create() {
+    function create(ev) {
       self.novoBB.idresponsavel1 = self.selectedResp.id;
-      $http({
-        method: "POST",
-        url: root + '/bebe.join',
-        data: self.novoBB
-      }).then(function mySucces(response) {
-        $location.path('bebe.list');
-      }, function myError(response) {
-        console.log('fail')
-      });
+      var confirm = $mdDialog.confirm()
+          .title('Salvar dados do Bebê?')
+          .textContent('Os dados cadastrados serão persistidos no sistema.')
+          .targetEvent(ev)
+          .ok('OK')
+          .cancel('CANCELAR');
+
+      $mdDialog.show(confirm).then(function() {
+        $http({
+          method: "POST",
+          url: root + '/bebe.join',
+          data: self.novoBB
+        }).then(function mySucces(response) {
+          $location.path('bebe.list');
+        }, function myError(response) {
+          console.log('fail')
+        });
+      }, function() {
+    });
+
+
+
+
     }
 
     self.querySearch = function (searchText) {

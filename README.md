@@ -1,4 +1,4 @@
-# Oganize Baby Frontend
+# Organize Baby Frontend
 
 ## Getting Started
 

@@ -2,7 +2,7 @@
     <md-list>
         <h2>Lista de Bebês</h2>
         <md-button class="md-raised md-primary" ng-click="bbLCtrl.cadastrar()">Cadastrar Novo</md-button>
-        <md-list-item ng-repeat="bb in bbLCtrl.bebe" ng-click="bbLCtrl.goToPerson(bb.b_id)">
+        <md-list-item ng-repeat="bb in bbLCtrl.bebe" ng-click="bbLCtrl.showItem($event, bb)">
             <md-icon md-svg-icon="assets/svg/avatar-4.svg" class="imagem-contato"></md-icon>
             <p>{{ bb.b_nome }}</p>
         </md-list-item>
