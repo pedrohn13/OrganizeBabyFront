@@ -2,7 +2,7 @@
     <md-list>
         <h2>Lista de Responsáveis</h2>
         <md-button class="md-raised md-primary" ng-click="respCtrl.cadastrar()">Cadastrar Novo</md-button>
-        <md-list-item ng-repeat="resp in respCtrl.responsaveis" ng-click="respCtrl.goToPerson(resp.p_id)">
+        <md-list-item ng-repeat="resp in respCtrl.responsaveis" ng-click="respCtrl.showItem($event, resp)">
             <md-icon md-svg-icon="assets/svg/avatar-1.svg" class="imagem-contato"></md-icon>
             <p>{{ resp.p_nome }}</p>
         </md-list-item>
