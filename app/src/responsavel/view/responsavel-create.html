@@ -6,15 +6,19 @@
                 <div layout="column" flex>
                     <md-input-container>
                         <label>Nome</label>
-                        <input ng-model="respCreateCtrl.novoResp.p_nome">
+                        <input ng-model="respCreateCtrl.novoResp.p_nome" type="text">
                     </md-input-container>
                     <md-input-container>
                         <label>CPF</label>
-                        <input ng-model="respCreateCtrl.novoResp.p_cpf">
+                        <input ng-model="respCreateCtrl.novoResp.p_cpf" type="text" pattern="\d{9}-\d{2}"
+                        placeholder="XXXXXXXXX-XX">
                     </md-input-container>
                     <md-input-container>
                         <label>Telefone</label>
-                        <input ng-model="respCreateCtrl.novoResp.p_telefone">
+                        <input ng-model="respCreateCtrl.novoResp.p_telefone"
+                        type="text" required="required"
+                        pattern="[0-9]{2} [0-9]{9}"
+                        placeholder="DDD XXXXXXXXX">
                     </md-input-container>
                     <md-input-container>
                         <label>Senha</label>

@@ -6,11 +6,13 @@
                 <div layout="column" flex>
                     <md-input-container>
                         <label>Nome</label>
-                        <input ng-model="cuidCreateCtrl.novoCuid.c_nome">
+                        <input ng-model="cuidCreateCtrl.novoCuid.c_nome" type="text">
                     </md-input-container>
                     <md-input-container>
                         <label>CPF</label>
-                        <input ng-model="cuidCreateCtrl.novoCuid.p_cpf">
+                        <input ng-model="cuidCreateCtrl.novoCuid.p_cpf" type="text"
+                        pattern="\d{9}-\d{2}"
+                        placeholder="XXXXXXXXX-XX">
                     </md-input-container>
                     <md-input-container layout="column">
                         <label style="margin-bottom: 20px">Foto do cuidador(a)</label>
