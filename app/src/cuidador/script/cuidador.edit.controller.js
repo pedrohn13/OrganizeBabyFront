@@ -2,20 +2,41 @@
 
     angular
         .module('users')
-        .controller('CuidadorCreateController',
-            ['$http', '$location', '$mdDialog', CuidadorCreateController]);
+        .controller('CuidadorEditController',
+            ['$http', '$location', '$mdDialog', '$routeParams', CuidadorEditController]);
 
-    function CuidadorCreateController($http, $location, $mdDialog) {
+    function CuidadorEditController($http, $location, $mdDialog, $routeParams) {
         var root = 'https://leonardoads.pythonanywhere.com/OrganizeBaby/default/api';
         var self = this;
 
-        self.novoCuid = {idbercario: 1};
+        self.novoCuid = {};
         self.loading = false;
 
-        self.create = create;
-        self.disableCreateButton = disableCreateButton;
+        self.edit = edit;
+        self.disableEditButton = disableEditButton;
 
-        function disableCreateButton() {
+        getCuidador();
+
+        function getCuidador() {
+            $http({
+                method: "GET",
+                url: root + '/cuidadora/id/' + $routeParams.id + '.json'
+            }).then(function mySucces(response) {
+                self.novoCuid = response.data.content[0];
+            }, function myError(response) {
+                $mdDialog.show(
+                    $mdDialog.alert()
+                        .parent(angular.element(document.querySelector('#popupContainer')))
+                        .clickOutsideToClose(true)
+                        .title('Erro ao carregar cuidador')
+                        .textContent('Provavelmente erro de conexão, tente novamente mais tarde.')
+                        .ariaLabel('Erro ao carregar')
+                        .ok('OK')
+                );
+            });
+        }
+
+        function disableEditButton() {
             return isEmptyValue(self.novoCuid.c_nome) ||
                 isEmptyValue(self.novoCuid.p_cpf);
         }
@@ -24,7 +45,7 @@
             return (value === '') || (value === undefined);
         }
 
-        function create(ev) {
+        function edit(ev) {
             var confirm = $mdDialog.confirm()
                 .title('Salvar dados do Cuidador?')
                 .textContent('Os dados cadastrados serão persistidos no sistema.')
@@ -35,8 +56,8 @@
             $mdDialog.show(confirm).then(function () {
                 self.loading = true;
                 $http({
-                    method: "POST",
-                    url: root + '/cuidadora.json',
+                    method: "PUT",
+                    url: root + '/cuidadora/' + self.novoCuid.id,
                     data: self.novoCuid
                 }).then(function mySucces(response) {
                     self.loading = false;
@@ -44,7 +65,7 @@
                         $mdDialog.alert()
                             .parent(angular.element(document.querySelector('#popupContainer')))
                             .clickOutsideToClose(true)
-                            .title('Cuidador Criado com Sucesso!')
+                            .title('Cuidador Editado com Sucesso!')
                             .ariaLabel('Erro ao carregar')
                             .ok('OK')
                     );

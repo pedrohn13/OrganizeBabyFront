@@ -117,9 +117,8 @@
                     .cancel('CANCELAR');
 
                 $mdDialog.show(confirm).then(function() {
-                    console.log('apagou')
+                    $location.path('bebe.edit/' + selectedUser.id);
                 }, function() {
-                    console.log('cancelou')
                 });
             }
         }

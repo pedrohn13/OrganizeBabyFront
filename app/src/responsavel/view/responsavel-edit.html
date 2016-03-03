@@ -1,38 +1,40 @@
 <div class="md-inline-form" style="margin-top: 5px">
-    <h2>Cadastro de Novo Responsável</h2>
+    <h2>Edição de Responsável</h2>
     <md-content layout-padding>
         <md-whiteframe class="md-whiteframe-2dp" layout>
             <form flex name="searchForm">
                 <div layout="column" flex>
                     <md-input-container>
                         <label>Nome</label>
-                        <input ng-model="respCreateCtrl.novoResp.p_nome" type="text">
+                        <input ng-model="respEditCtrl.novoResp.p_nome" type="text">
                     </md-input-container>
                     <md-input-container>
                         <label>CPF</label>
-                        <input ng-model="respCreateCtrl.novoResp.p_cpf" type="text" pattern="\d{3}.\d{3}.\d{3}-\d{2}"
-                        placeholder="XXX.XXX.XXX-XX">
+                        <input ng-model="respEditCtrl.novoResp.p_cpf" type="text" pattern="\d{3}.\d{3}.\d{3}-\d{2}"
+                               placeholder="XXX.XXX.XXX-XX">
                     </md-input-container>
                     <md-input-container>
                         <label>Telefone</label>
-                        <input ng-model="respCreateCtrl.novoResp.p_telefone"
-                        type="text" required="required"
-                        pattern="[0-9]{2} [0-9]{9}"
-                        placeholder="DDD XXXXXXXXX">
+                        <input ng-model="respEditCtrl.novoResp.p_telefone"
+                               type="text" required="required"
+                               pattern="[0-9]{2} [0-9]{9}"
+                               placeholder="DDD XXXXXXXXX">
                     </md-input-container>
                     <md-input-container>
                         <label>Senha</label>
-                        <input ng-model="respCreateCtrl.novoResp.p_senha" type="password">
+                        <input ng-model="respEditCtrl.novoResp.p_senha" type="password">
                     </md-input-container>
                     <md-input-container>
                         <label>Repetir Senha</label>
-                        <input ng-model="respCreateCtrl.checkSenha" type="password">
+                        <input ng-model="respEditCtrl.checkSenha" type="password">
                     </md-input-container>
                     <div layout="row" layout-align="end center">
                         <div>
-                            <md-button ng-disabled="respCreateCtrl.disableCreateButton()" class="md-raised md-primary" ng-click="respCreateCtrl.create($event)">Salvar
+                            <md-button ng-disabled="respEditCtrl.disableEditButton()" class="md-raised md-primary"
+                                       ng-click="respEditCtrl.edit($event)">Salvar
                             </md-button>
-                            <md-progress-linear ng-show="respCreateCtrl.loading" md-mode="indeterminate"></md-progress-linear>
+                            <md-progress-linear ng-show="respEditCtrl.loading"
+                                                md-mode="indeterminate"></md-progress-linear>
                         </div>
                     </div>
                 </div>

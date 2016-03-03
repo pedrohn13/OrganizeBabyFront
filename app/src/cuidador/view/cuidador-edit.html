@@ -1,28 +1,28 @@
 <div class="md-inline-form" style="margin-top: 5px">
-    <h2>Cadastro de Novo Cuidador(a)</h2>
+    <h2>Edição de Cuidador(a)</h2>
     <md-content layout-padding>
         <md-whiteframe class="md-whiteframe-2dp" layout>
             <form flex name="searchForm">
                 <div layout="column" flex>
                     <md-input-container>
                         <label>Nome</label>
-                        <input ng-model="cuidCreateCtrl.novoCuid.c_nome" type="text">
+                        <input ng-model="cuidEditCtrl.novoCuid.c_nome" type="text">
                     </md-input-container>
                     <md-input-container>
                         <label>CPF</label>
-                        <input ng-model="cuidCreateCtrl.novoCuid.p_cpf" type="text"
+                        <input ng-model="cuidEditCtrl.novoCuid.p_cpf" type="text"
                                pattern="\d{3}.\d{3}.\d{3}-\d{2}"
-                        placeholder="XXX.XXX.XXX-XX">
+                               placeholder="XXX.XXX.XXX-XX">
                     </md-input-container>
                     <md-input-container layout="column">
                         <label style="margin-bottom: 20px">Foto do cuidador(a)</label>
                     </md-input-container>
-                    <input ng-model="cuidCreateCtrl.novoCuid.c_foto" type="file">
+                    <input ng-model="cuidEditCtrl.novoCuid.c_foto" type="file">
                     <div layout="row" layout-align="end center">
                         <div>
-                            <md-button ng-disabled="cuidCreateCtrl.disableCreateButton()" class="md-raised md-primary" ng-click="cuidCreateCtrl.create($event)">Salvar
+                            <md-button ng-disabled="cuidEditCtrl.disableEditButton()" class="md-raised md-primary" ng-click="cuidEditCtrl.edit($event)">Salvar
                             </md-button>
-                            <md-progress-linear ng-show="cuidCreateCtrl.loading" md-mode="indeterminate"></md-progress-linear>
+                            <md-progress-linear ng-show="cuidEditCtrl.loading" md-mode="indeterminate"></md-progress-linear>
                         </div>
                     </div>
                 </div>

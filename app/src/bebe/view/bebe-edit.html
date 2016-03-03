@@ -1,0 +1,55 @@
+<div class="md-inline-form" style="margin-top: 5px">
+    <h2>Edição de Bebê</h2>
+    <md-content layout-padding>
+        <md-whiteframe class="md-whiteframe-2dp" layout>
+            <form layout="column" flex>
+                <md-input-container>
+                    <label>Nome</label>
+                    <input ng-model="bbEditCtrl.novoBB.b_nome" type="text">
+                </md-input-container>
+
+                <md-radio-group ng-model="bbEditCtrl.novoBB.b_sexo">
+                    <md-radio-button ng-checked id="m" value="m" class="md-primary">Masculino</md-radio-button>
+                    <md-radio-button ng-checked id="f" value="f"> Feminino </md-radio-button>
+                </md-radio-group>
+
+                <md-input-container>
+                    <label>Naturalidade</label>
+                    <input ng-model="bbEditCtrl.novoBB.b_naturalidade" type="text">
+                </md-input-container>
+
+                <md-input-container layout="column">
+                    <label style="margin-bottom: 20px">Foto do Bebê</label>
+                </md-input-container>
+                <input ng-model="bbEditCtrl.novoBB.b_foto" type="file">
+
+                <md-input-container>
+                    <label>Observações</label>
+                    <input ng-model="bbEditCtrl.novoBB.b_obs" type="text">
+                </md-input-container>
+
+                <md-autocomplete flex required
+                                 md-input-name="autocompleteField"
+                                 md-input-minlength="2"
+                                 md-input-maxlength="18"
+                                 md-selected-item="bbEditCtrl.selectedResp"
+                                 md-search-text="bbEditCtrl.searchText"
+                                 md-items="item in bbEditCtrl.querySearch(bbEditCtrl.searchText)"
+                                 md-item-text="item.p_nome"
+                                 md-floating-label="Responsável do Bebê">
+                    <md-item-template>
+                        <span md-highlight-text="bbEditCtrl.searchText">{{item.p_nome}}</span>
+                    </md-item-template>
+                </md-autocomplete>
+
+                <div layout="row" layout-align="end center">
+                    <div>
+                        <md-button ng-disabled="bbEditCtrl.disableEditButton()" class="md-raised md-primary" ng-click="bbEditCtrl.edit($event)">Salvar
+                        </md-button>
+                        <md-progress-linear ng-show="bbEditCtrl.loading" md-mode="indeterminate"></md-progress-linear>
+                    </div>
+                </div>
+            </form>
+        </md-whiteframe>
+    </md-content>
+</div>
