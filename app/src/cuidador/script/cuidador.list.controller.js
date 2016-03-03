@@ -9,7 +9,10 @@
         var root = 'https://leonardoads.pythonanywhere.com/OrganizeBaby/default/api';
         var self = this;
         var selectedUser;
+
         self.cuidadores = [];
+        self.deleting = false;
+
         self.cadastrar = cadastrar;
         self.showItem = showItem;
 
@@ -63,10 +66,17 @@
                   .cancel('CANCELAR');
 
                 $mdDialog.show(confirm).then(function() {
+                    self.deleting = true;
+                    $mdDialog.show(
+                        $mdDialog.alert()
+                            .title('Removendo Cuidador')
+                            .textContent('Aguarde...')
+                    );
                     $http({
                         method: "DELETE",
                         url: root + '/cuidadora/' + selectedUser.id
                     }).then(function mySucces(response) {
+                        self.deleting = false;
                         var index = self.cuidadores.indexOf(selectedUser);
                         self.cuidadores.splice(index, 1);
                         $mdDialog.show(
@@ -77,6 +87,7 @@
                             .ok('OK')
                         );
                     }, function myError(response) {
+                        self.deleting = false;
                         $mdDialog.show(
                           $mdDialog.alert()
                             .parent(angular.element(document.querySelector('#popupContainer')))
@@ -88,7 +99,6 @@
                         );
                     });
                 }, function() {
-                    console.log('cancelou')
                 });
             }
 

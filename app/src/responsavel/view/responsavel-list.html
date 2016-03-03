@@ -1,4 +1,4 @@
-<div>
+<div ng-class="{'disabled-list' : respCtrl.deleting}">
     <md-list>
         <h2>Lista de Responsáveis</h2>
         <md-button class="md-raised md-primary" ng-click="respCtrl.cadastrar()">Cadastrar Novo</md-button>
@@ -6,7 +6,5 @@
             <md-icon md-svg-icon="assets/svg/avatar-1.svg" class="imagem-contato"></md-icon>
             <p>{{ resp.p_nome }}</p>
         </md-list-item>
-
-
     </md-list>
 </div>

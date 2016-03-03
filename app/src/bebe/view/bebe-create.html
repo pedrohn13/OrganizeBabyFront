@@ -44,8 +44,9 @@
 
               <div layout="row" layout-align="end center">
                     <div>
-                        <md-button class="md-raised md-primary" ng-click="bbCreateCtrl.create($event)">Salvar
+                        <md-button ng-disabled="bbCreateCtrl.disableCreateButton()" class="md-raised md-primary" ng-click="bbCreateCtrl.create($event)">Salvar
                         </md-button>
+                        <md-progress-linear ng-show="bbCreateCtrl.loading" md-mode="indeterminate"></md-progress-linear>
                     </div>
                 </div>
             </form>

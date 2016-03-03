@@ -24,10 +24,15 @@
                         <label>Senha</label>
                         <input ng-model="respCreateCtrl.novoResp.p_senha" type="password">
                     </md-input-container>
+                    <md-input-container>
+                        <label>Repetir Senha</label>
+                        <input ng-model="respCreateCtrl.checkSenha" type="password">
+                    </md-input-container>
                     <div layout="row" layout-align="end center">
                         <div>
-                            <md-button class="md-raised md-primary" ng-click="respCreateCtrl.create($event)">Salvar
+                            <md-button ng-disabled="respCreateCtrl.disableCreateButton()" class="md-raised md-primary" ng-click="respCreateCtrl.create($event)">Salvar
                             </md-button>
+                            <md-progress-linear ng-show="respCreateCtrl.loading" md-mode="indeterminate"></md-progress-linear>
                         </div>
                     </div>
                 </div>

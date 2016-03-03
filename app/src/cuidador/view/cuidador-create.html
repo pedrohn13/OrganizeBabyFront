@@ -20,8 +20,9 @@
                     <input ng-model="cuidCreateCtrl.novoCuid.c_foto" type="file">
                     <div layout="row" layout-align="end center">
                         <div>
-                            <md-button class="md-raised md-primary" ng-click="cuidCreateCtrl.create($event)">Salvar
+                            <md-button ng-disabled="cuidCreateCtrl.disableCreateButton()" class="md-raised md-primary" ng-click="cuidCreateCtrl.create($event)">Salvar
                             </md-button>
+                            <md-progress-linear ng-show="cuidCreateCtrl.loading" md-mode="indeterminate"></md-progress-linear>
                         </div>
                     </div>
                 </div>
